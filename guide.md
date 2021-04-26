@@ -10,4 +10,6 @@ Lesson 1:
   - style (nếu thêm attribute scoped thì css chỉ app dụng cho file đó)
 
 Lesson 2: 
-- Khởi tạo dữ liệu ban đầu
+- Khởi tạo dữ liệu ban đầu:
+  - Dùng hàm setup và trong hàm này return biến (có dùng ref ), rồi biến này sẽ dùng trong template
+- Dùng v-for để loop và v-bind:key
