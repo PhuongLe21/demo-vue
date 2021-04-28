@@ -1,5 +1,11 @@
 <template>
-  <TodoItem v-for="todo in todos" v-bind:key="todo" v-bind:todoProp="todo" />
+  <TodoItem
+    v-for="todo in todos"
+    v-bind:key="todo"
+    v-bind:todoProp="todo"
+    v-on:make-complete="makeComplete"
+    v-on:delete-item="deleteItem"
+  />
 </template>
 
 <script>
@@ -29,8 +35,23 @@ export default {
 
   setup() {
     const todos = ref(todoArray)
+
+    const makeComplete = (id) => {
+      todos.value = todos.value.map((td) => {
+        if (td.id === id) {
+          td.completed = !td.completed
+        }
+
+        return td
+      })
+    }
+    const deleteItem = (id) => {
+      todos.value = todos.value.filter(td => td.id !== id)
+    }
     return {
-      todos
+      todos,
+      makeComplete,
+      deleteItem
     }
   },
   components: {

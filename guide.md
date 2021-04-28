@@ -25,4 +25,9 @@ Lesson 2:
   v-bind: reactive behavior to DOM.
 - Handle User Input: trong template: v-on:click="fn name", trong script thì khai báo methods rồi khai báo hàm trong đấy
   Note: khi state(biến) change, we don't touch DOM, cause Vue handled it
-- Condition and loop: v-if and v-for  
+- Condition and loop: v-if and v-for
+- Viết tắt: v-on(@), v-bind(:)
+
+- Truyền event từ child sang parent: Ví dụ: Component cha là 1 data list, con sẽ là 1 item trong list đấy, muốn thay đổi nội dung item thì phải thay đổi data ở trên list (có thể hình dung app todoList chẳng hạn)
+  React: truyền hàm (as a prop) từ parent sang child, trong child gọi hàm đó và truyền thêm thông tin nếu cần, parent sẽ xử lý logic (thay đổi state: cập nhật lại list => child sẽ render lại)
+  Vuejs: Tương tự: note: child sẽ emit 1 event (qua context.emit(tên_emit, data)) và parent sẽ handle 
