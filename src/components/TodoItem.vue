@@ -12,8 +12,6 @@ export default {
   props: ['todoProp'],
   setup(prop, context) {
     const markItemComplete = () => {
-      console.log('prop', prop)
-      console.log('context', context)
       context.emit('make-complete', prop.todoProp.id)
     }
 

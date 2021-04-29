@@ -1,4 +1,5 @@
 <template>
+  <AddTodo @add-item="addItem" />
   <TodoItem
     v-for="todo in todos"
     v-bind:key="todo"
@@ -11,6 +12,7 @@
 <script>
 import { ref } from 'vue'
 import TodoItem from './TodoItem'
+import AddTodo from './AddTodo'
 
 const todoArray = [
   {
@@ -48,14 +50,27 @@ export default {
     const deleteItem = (id) => {
       todos.value = todos.value.filter(td => td.id !== id)
     }
+
+    const addItem = (title) => {
+      console.log('title parent', title)
+      const newItem = {
+        id: todos.value.length + 1,
+        title,
+        completed: false
+      }
+
+      todos.value.push(newItem)
+    }
     return {
       todos,
       makeComplete,
-      deleteItem
+      deleteItem,
+      addItem
     }
   },
   components: {
-    TodoItem
+    TodoItem,
+    AddTodo
   }
 }
 </script>

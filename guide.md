@@ -31,3 +31,10 @@ Lesson 2:
 - Truyền event từ child sang parent: Ví dụ: Component cha là 1 data list, con sẽ là 1 item trong list đấy, muốn thay đổi nội dung item thì phải thay đổi data ở trên list (có thể hình dung app todoList chẳng hạn)
   React: truyền hàm (as a prop) từ parent sang child, trong child gọi hàm đó và truyền thêm thông tin nếu cần, parent sẽ xử lý logic (thay đổi state: cập nhật lại list => child sẽ render lại)
   Vuejs: Tương tự: note: child sẽ emit 1 event (qua context.emit(tên_emit, data)) và parent sẽ handle 
+- Dùng v-model để lấy giá trị giữa template và biến trong script, (ví dụ lấy giá trị từ thẻ input, trong React sẽ phải dùng setState)
+
+-------------------------------------------------------
+Tom tat sau khi hoc xong 5 videos ve vue3
+- 1 component có 3 phần template, script, style
+- Muốn dùng biến hay hàm trong template thì trong js phải export ra, còn dùng component cũng export (hay đăng ký)
+- v-model để bind data giữa user nhập vào và xử lý trong js (vd: lấy giá trị từ input)
